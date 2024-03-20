@@ -3,19 +3,20 @@ package model.stats;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatsList {
+public class StatsList
+{
     List<Stat> statList = new ArrayList<Stat>();
     private IncomeStat incomeStat;
     private HappinessStat happinessStat;
     private ProductionStat productionStat;
     private PopulationStat populationStat;
 
-    public StatsList(IncomeStat incomeStat, HappinessStat happinessStat, ProductionStat productionStat, PopulationStat populationStat)
+    public StatsList()
     {
-        this.incomeStat = incomeStat;
-        this.happinessStat = happinessStat;
-        this.productionStat = productionStat;
-        this.populationStat = populationStat;
+        this.incomeStat = new IncomeStat(0);
+        this.happinessStat = new HappinessStat(0);
+        this.productionStat = new ProductionStat(0);
+        this.populationStat = new PopulationStat(0);
         statList.add(incomeStat);
         statList.add(happinessStat);
         statList.add(productionStat);
@@ -53,4 +54,5 @@ public class StatsList {
     public void setPopulationStat(PopulationStat populationStat) {
         this.populationStat = populationStat;
     }
+    public List<Stat> getStatList() {return statList;}
 }
