@@ -7,20 +7,20 @@ public class ProductionStat extends Stat
     {
         this.statValue = statValue;
     }
-    public void incrementStat() {
-        statValue++;
+    public void incrementStat(int numberToAdd) {
+        statValue += numberToAdd;
     }
 
-    public void decrementStats() {
-        statValue--;
+    public void decrementStats(int numberToSubtract) {
+        statValue -= numberToSubtract;
     }
 
-    public void addPercentage() {
-
+    public void addPercentage(int percentageNumber) {
+        statValue += (statValue*percentageNumber/100);
     }
 
-    public void removePercentage() {
-
+    public void removePercentage(int percentageNumber) {
+        statValue -= (statValue*percentageNumber/100);
     }
 
     public int getStatValue() {return statValue;}

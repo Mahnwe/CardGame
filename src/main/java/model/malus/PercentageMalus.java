@@ -6,7 +6,8 @@ public class PercentageMalus extends Malus
     {
 
     }
-    public void addMalusToStat() {
-
+    public int addMalusToStat(int cardStat, int percentageNumberToSubtract) {
+    cardStat += (cardStat*percentageNumberToSubtract/100);
+    return cardStat;
     }
 }

@@ -5,5 +5,4 @@ public abstract class Malus {
     {
 
     }
-    public abstract void addMalusToStat();
 }

@@ -6,7 +6,8 @@ public class PassivBonus extends Bonus
     {
 
     }
-    public int addBonusToStat(int playerStat) {
-     return playerStat++;
+    public int addBonusToStat(int cardStat, int numberToAdd) {
+     cardStat += numberToAdd;
+     return cardStat;
     }
 }

@@ -2,23 +2,22 @@ package handlers;
 
 import model.Hand;
 import model.Player;
+import model.stats.StatsList;
 
 public class GameHandler
 {
-    private final StatHandler statHandler;
-    private final PlayerHandler playerHandler;
     private final BoardHandler boardHandler;
+    private final StatsList finalStatList;
 
     public GameHandler()
     {
-        statHandler = new StatHandler();
-        playerHandler = new PlayerHandler(new Player());
         boardHandler = new BoardHandler();
+        finalStatList = new StatsList();
     }
 
-    public StatHandler getStatHandler() {return statHandler;}
-
-    public PlayerHandler getPlayerHandler() {return playerHandler;}
-
     public BoardHandler getBoardHandler() {return boardHandler;}
+
+    public StatsList getFinalStatList() {
+        return finalStatList;
+    }
 }

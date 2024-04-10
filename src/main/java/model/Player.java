@@ -3,9 +3,11 @@ package model;
 public class Player {
     private String name;
     private int playerScore;
+    private final Hand playerHand;
 
     public Player()
     {
+        playerHand = new Hand();
     }
 
     public String getName() {
@@ -22,5 +24,9 @@ public class Player {
 
     public void setPlayerScore(int playerScore) {
         this.playerScore = playerScore;
+    }
+
+    public Hand getPlayerHand() {
+        return playerHand;
     }
 }

@@ -6,7 +6,8 @@ public class PassivMalus extends Malus
     {
 
     }
-    public void addMalusToStat() {
-
+    public int addMalusToStat(int cardStat, int numberToSubtract) {
+    cardStat -= numberToSubtract;
+    return cardStat;
     }
 }

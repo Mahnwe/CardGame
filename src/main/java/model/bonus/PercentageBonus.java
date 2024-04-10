@@ -6,7 +6,8 @@ public class PercentageBonus extends Bonus
     {
 
     }
-    public void addBonusToStat() {
-
+    public int addBonusToStat(int cardStat, int percentageNumberToAdd) {
+    cardStat += (cardStat*percentageNumberToAdd/100);
+    return cardStat;
     }
 }
