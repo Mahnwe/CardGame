@@ -5,7 +5,7 @@ import model.malus.Malus;
 import model.stats.StatsList;
 
 public class IndustryCard extends Card{
-    public IndustryCard(String cardType, String cardName, StatsList statsList, Bonus bonus, Malus malus) {
-        super(cardType, cardName, statsList, bonus, malus);
+    public IndustryCard(String cardType, String cardName,  int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, Malus malus) {
+        super(cardType, cardName, productionStat, incomeStat, populationStat, happinessStat, bonus, malus);
     }
 }

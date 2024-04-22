@@ -5,7 +5,7 @@ import model.malus.Malus;
 import model.stats.StatsList;
 
 public class LeisureCard extends Card{
-    protected LeisureCard(String cardType, String cardName, StatsList statsList, Bonus bonus, Malus malus) {
-        super(cardType, cardName, statsList, bonus, malus);
+    protected LeisureCard(String cardType, String cardName,  int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, Malus malus) {
+        super(cardType, cardName, productionStat, incomeStat, populationStat, happinessStat, bonus, malus);
     }
 }

@@ -3,19 +3,16 @@ package model.cards;
 import model.bonus.Bonus;
 import model.malus.Malus;
 
-public class BonusCard
+public class BonusCard extends Card
 {
     private String cardType;
     private String cardName;
     private Bonus bonus;
     private Malus malus;
 
-    public BonusCard(String cardType, String cardName, Bonus bonus, Malus malus)
+    public BonusCard(String cardType, String cardName, int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, Malus malus)
     {
-        this.cardType = cardType;
-        this.cardName = cardName;
-        this.bonus = bonus;
-        this.malus = malus;
+        super(cardType, cardName, productionStat, incomeStat, populationStat, happinessStat, bonus, malus);
     }
 
         public String getCardType() {

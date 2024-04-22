@@ -11,11 +11,14 @@ public abstract class Card {
     private Bonus bonus;
     private Malus malus;
 
-    protected Card(String cardType, String cardName, StatsList statsList, Bonus bonus, Malus malus)
+    protected Card(String cardType, String cardName, int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, Malus malus)
     {
         this.cardType = cardType;
         this.cardName = cardName;
-        this.statsList = statsList;
+        this.statsList.getProductionStat().setStatValue(productionStat);
+        this.statsList.getIncomeStat().setStatValue(incomeStat);
+        this.statsList.getPopulationStat().setStatValue(populationStat);
+        this.statsList.getHappinessStat().setStatValue(happinessStat);
         this.bonus = bonus;
         this.malus = malus;
     }
