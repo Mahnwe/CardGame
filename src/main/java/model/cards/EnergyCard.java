@@ -1,11 +1,9 @@
 package model.cards;
 
 import model.bonus.Bonus;
-import model.malus.Malus;
-import model.stats.StatsList;
 
 public class EnergyCard extends Card{
-    public EnergyCard(String cardType, String cardName,  int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, Malus malus) {
-        super(cardType, cardName, productionStat, incomeStat, populationStat, happinessStat, bonus, malus);
+    public EnergyCard(String cardType, String cardName,  int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, String bonusDescription) {
+        super(cardType, cardName, productionStat, incomeStat, populationStat, happinessStat, bonus, bonusDescription);
     }
 }

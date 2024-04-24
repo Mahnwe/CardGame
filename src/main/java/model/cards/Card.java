@@ -1,17 +1,16 @@
 package model.cards;
 
 import model.bonus.Bonus;
-import model.malus.Malus;
-import model.stats.*;
+import model.stats.StatsList;
 
 public abstract class Card {
     private String cardType;
     private String cardName;
     private StatsList statsList;
     private Bonus bonus;
-    private Malus malus;
+    private final String bonusDescription;
 
-    protected Card(String cardType, String cardName, int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, Malus malus)
+    protected Card(String cardType, String cardName, int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, String bonusDescription)
     {
         this.cardType = cardType;
         this.cardName = cardName;
@@ -20,7 +19,7 @@ public abstract class Card {
         this.statsList.getPopulationStat().setStatValue(populationStat);
         this.statsList.getHappinessStat().setStatValue(happinessStat);
         this.bonus = bonus;
-        this.malus = malus;
+        this.bonusDescription = bonusDescription;
     }
 
     public String getCardType() {
@@ -52,11 +51,5 @@ public abstract class Card {
         this.bonus = bonus;
     }
 
-    public Malus getMalus() {
-        return malus;
-    }
-
-    public void setMalus(Malus malus) {
-        this.malus = malus;
-    }
+    public String getBonusDescription() {return bonusDescription;}
 }

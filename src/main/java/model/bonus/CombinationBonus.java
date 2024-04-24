@@ -1,10 +1,7 @@
 package model.bonus;
 
 import model.BoardGame;
-import model.CardSlot;
-
-import java.util.ArrayList;
-import java.util.List;
+import model.stats.StatsList;
 
 public class CombinationBonus extends Bonus
 {
@@ -12,13 +9,31 @@ public class CombinationBonus extends Bonus
     {
 
     }
-    public int addBonusToStat(int cardStat, int numberToAdd, String cardNameForCombination) {
-       List<CardSlot> cardSlotsList = new ArrayList<CardSlot>();
-        for (CardSlot cardSlot : cardSlotsList) {
-            if (cardSlot.getCard().getCardName().equals(cardNameForCombination)) {
-                cardStat += numberToAdd;
+    public void addBonusToStatIfCardNameIsOnBoard(StatsList cardStatList, int numberToAdd, String cardNameForCombination, BoardGame boardGame)
+    {
+        for (int i =0; i < boardGame.getCardSlotsList().size(); i++)
+        {
+            if (boardGame.getCardSlotsList().get(i).getCard().getCardName().equals(cardNameForCombination))
+            {
+                cardStatList.getHappinessStat().incrementStat(numberToAdd);
+                cardStatList.getProductionStat().incrementStat(numberToAdd);
+                cardStatList.getPopulationStat().incrementStat(numberToAdd);
+                cardStatList.getIncomeStat().incrementStat(numberToAdd);
             }
         }
-        return cardStat;
+    }
+
+    public void addBonusToStatIfCardTypeIsOnBoard(StatsList cardStatList, int numberToAdd, String cardTypeForCombination, BoardGame boardGame)
+    {
+        for (int i =0; i < boardGame.getCardSlotsList().size(); i++)
+        {
+            if (boardGame.getCardSlotsList().get(i).getCard().getCardType().equals(cardTypeForCombination))
+            {
+                cardStatList.getHappinessStat().incrementStat(numberToAdd);
+                cardStatList.getProductionStat().incrementStat(numberToAdd);
+                cardStatList.getPopulationStat().incrementStat(numberToAdd);
+                cardStatList.getIncomeStat().incrementStat(numberToAdd);
+            }
+        }
     }
 }
