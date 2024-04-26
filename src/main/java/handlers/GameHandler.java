@@ -14,6 +14,13 @@ public class GameHandler
         boardHandler.getDeckHandler().constructDeckForPlayer();
     }
 
+    public void endingRound()
+    {
+        boardHandler.checkBoardSlotsForStats();
+        addBoardHandlerStatsToFinalStatListEachTurn();
+        boardHandler.resetStatListEachTurn();
+    }
+
     public void startRound1()
     {
         boardHandler.getPlayerHandler().getPlayer().getPlayerHand().setCardsList(boardHandler.getDeckHandler().constructDeckForRound1());

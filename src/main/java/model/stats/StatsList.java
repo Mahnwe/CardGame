@@ -1,6 +1,8 @@
 package model.stats;
 
-public class StatsList
+import java.util.ArrayList;
+
+public class StatsList extends ArrayList<Stat>
 {
     private IncomeStat incomeStat;
     private HappinessStat happinessStat;
@@ -13,6 +15,10 @@ public class StatsList
         this.happinessStat = new HappinessStat(0);
         this.productionStat = new ProductionStat(0);
         this.populationStat = new PopulationStat(0);
+        this.add(incomeStat);
+        this.add(happinessStat);
+        this.add(productionStat);
+        this.add(populationStat);
     }
 
     public IncomeStat getIncomeStat() {

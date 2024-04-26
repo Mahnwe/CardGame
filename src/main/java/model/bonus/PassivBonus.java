@@ -1,27 +1,47 @@
 package model.bonus;
 
 import model.BoardGame;
-import model.cards.Card;
+import model.stats.Stat;
 import model.stats.StatsList;
 
 public class PassivBonus extends Bonus
 {
-    public PassivBonus()
+    private final boolean isOnlyOneStat;
+    private final boolean isAllStats;
+    private final boolean isAllBoard;
+    public PassivBonus(boolean isOnlyOneStat, boolean isAllStats, boolean isAllBoard)
     {
-
+        this.isOnlyOneStat = isOnlyOneStat;
+        this.isAllStats = isAllStats;
+        this.isAllBoard = isAllBoard;
     }
-    public int addBonusToOnlyOneStat(int cardStat, int numberToAdd)
+
+    public void LaunchPassivBonusEffect(Stat cardStat, int numberToAdd, StatsList cardStatList, BoardGame boardGame)
     {
-        cardStat += numberToAdd;
-        return cardStat;
+        if(isOnlyOneStat)
+        {
+            addBonusToOnlyOneStat(cardStat, numberToAdd);
+        }
+        if(isAllStats)
+        {
+            addBonusToAllStats(cardStatList, numberToAdd);
+        }
+        if(isAllBoard)
+        {
+            addBonusToAllBoard(cardStatList, boardGame, numberToAdd);
+        }
+    }
+    public void addBonusToOnlyOneStat(Stat cardStat, int numberToAdd)
+    {
+        cardStat.incrementStat(numberToAdd);
     }
 
-    public void addBonusToAllStats(Card card, int numberToAdd)
+    public void addBonusToAllStats(StatsList cardStatList, int numberToAdd)
     {
-        card.getStatsList().getIncomeStat().incrementStat(numberToAdd);
-        card.getStatsList().getPopulationStat().incrementStat(numberToAdd);
-        card.getStatsList().getProductionStat().incrementStat(numberToAdd);
-        card.getStatsList().getHappinessStat().incrementStat(numberToAdd);
+        cardStatList.getIncomeStat().incrementStat(numberToAdd);
+        cardStatList.getPopulationStat().incrementStat(numberToAdd);
+        cardStatList.getProductionStat().incrementStat(numberToAdd);
+        cardStatList.getHappinessStat().incrementStat(numberToAdd);
     }
 
     public void addBonusToAllBoard(StatsList cardStatList, BoardGame boardGame, int numberToAdd)

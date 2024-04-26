@@ -5,10 +5,26 @@ import model.stats.StatsList;
 
 public class CombinationBonus extends Bonus
 {
-    public CombinationBonus()
+    private final boolean isForCardName;
+    private final boolean isForCardType;
+    public CombinationBonus(boolean isForCardName, boolean isForCardType)
     {
-
+        this.isForCardName = isForCardName;
+        this.isForCardType = isForCardType;
     }
+
+    public void launchCombinationBonusEffect(StatsList cardStatList, int numberToAdd, String cardNameForCombination, BoardGame boardGame)
+    {
+        if(isForCardType)
+        {
+            addBonusToStatIfCardTypeIsOnBoard(cardStatList, numberToAdd, cardNameForCombination, boardGame);
+        }
+        if(isForCardName)
+        {
+            addBonusToStatIfCardNameIsOnBoard(cardStatList, numberToAdd, cardNameForCombination, boardGame);
+        }
+    }
+
     public void addBonusToStatIfCardNameIsOnBoard(StatsList cardStatList, int numberToAdd, String cardNameForCombination, BoardGame boardGame)
     {
         for (int i =0; i < boardGame.getCardSlotsList().size(); i++)
