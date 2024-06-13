@@ -17,7 +17,7 @@ public class BonusCardStorage
 
     public void createBonusCards()
     {
-        BonusCard doubleIncomeStatCard = new BonusCard("Bonus", "Fleuve", 0, 0, 0, 0, new PassivBonus(false, false, true), "Augmente les statistiques de toute les cartes présentes sur le terrain");
+        BonusCard doubleIncomeStatCard = new BonusCard("Bonus", "Fleuve", 1, 1, 0, 1, new PassivBonus(false, false, true), "Augmente les statistiques de toute les cartes présentes sur le terrain");
         bonusCardList.add(doubleIncomeStatCard);
     }
     public List<BonusCard> getBonusCardList() {

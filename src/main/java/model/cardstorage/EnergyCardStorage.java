@@ -1,5 +1,6 @@
 package model.cardstorage;
 
+import model.bonus.CombinationBonus;
 import model.bonus.PercentageBonus;
 import model.cards.EnergyCard;
 
@@ -16,7 +17,7 @@ public class EnergyCardStorage {
 
     public void createEnergyCards()
     {
-        EnergyCard centraleEolienne = new EnergyCard("Energy", "Centrale éolienne", 1, 1, 1, 2, new PercentageBonus(false, false, true), "Augmente les statistiques des cartes de type 'Mer' et 'Plaines'");
+        EnergyCard centraleEolienne = new EnergyCard("Plain", "Energy", "Centrale éolienne", 1, 1, 1, 2, new CombinationBonus(false, false, true, "Plain"), "Augmente les statistiques des cartes de type 'Plaines'");
         energyCardList.add(centraleEolienne);
     }
     public List<EnergyCard> getEnergyCardList() {

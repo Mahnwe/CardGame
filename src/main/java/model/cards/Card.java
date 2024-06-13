@@ -4,14 +4,17 @@ import model.bonus.Bonus;
 import model.stats.StatsList;
 
 public abstract class Card {
+    private String cardFamily;
     private String cardType;
     private String cardName;
     private StatsList statsList;
     private Bonus bonus;
-    private final String bonusDescription;
+    private String bonusDescription;
+    private boolean isOnBoard;
 
-    protected Card(String cardType, String cardName, int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, String bonusDescription)
+    protected Card(String cardFamily, String cardType, String cardName, int productionStat, int incomeStat, int populationStat, int happinessStat, Bonus bonus, String bonusDescription)
     {
+        this.cardFamily = cardFamily;
         this.cardType = cardType;
         this.cardName = cardName;
         this.statsList.getProductionStat().setStatValue(productionStat);
@@ -21,6 +24,12 @@ public abstract class Card {
         this.bonus = bonus;
         this.bonusDescription = bonusDescription;
     }
+
+    protected Card() {
+    }
+
+    public String getCardFamily() {return cardFamily;}
+
 
     public String getCardType() {
         return cardType;
@@ -52,4 +61,8 @@ public abstract class Card {
     }
 
     public String getBonusDescription() {return bonusDescription;}
+
+    public boolean isOnBoard() {return isOnBoard;}
+
+    public void setOnBoard(boolean onBoard) {isOnBoard = onBoard;}
 }
